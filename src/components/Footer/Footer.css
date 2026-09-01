@@ -1,0 +1,192 @@
+
+
+/* Dark Minimal Container */
+
+.cs-footer {
+  background-color: #121212; 
+  color: #8c8c8c;
+  padding: 60px 0 30px;
+  font-size: 0.9rem;
+}
+
+.cs-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Grid Layout */
+.cs-footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Logo & Brand Info */
+.cs-logo {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.cs-logo span {
+  color: rgb(18, 179, 228);
+}
+
+.cs-brand-subtitle {
+  color: #8c8c8c;
+  line-height: 1.6;
+  font-size: 0.88rem;
+  max-width: 280px;
+}
+
+/* Columns Headings & Links */
+.cs-col-title {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.cs-col-links, 
+.cs-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-col-links li {
+  margin-bottom: 12px;
+}
+
+.cs-col-links a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs-col-links a:hover {
+  color:#d40e0e; 
+}
+
+/* Contact List Styling */
+.cs-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #8c8c8c;
+}
+
+.cs-contact-list a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs-contact-list a:hover {
+  color: #ffffff;
+}
+
+.cs-icon {
+  color: rgb(18, 179, 228);
+  font-size: 1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.cs-footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #262626;
+  margin-bottom: 30px;
+}
+
+/* Bottom Bar */
+.cs-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cs-copyright-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-copyright {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #737373;
+}
+
+.cs-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+.cs-legal-links a {
+  color: #737373;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs-legal-links a:hover {
+  color: #ffffff;
+}
+
+.cs-pipe {
+  color: #404040;
+}
+
+/* Social Icons */
+.cs-social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.cs-social-icons a {
+  color: #8c8c8c;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cs-social-icons a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .cs-footer {
+    padding: 40px 0 25px;
+  }
+
+  .cs-footer-container {
+    padding: 0 20px;
+  }
+
+  .cs-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cs-footer-bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .cs-social-icons {
+    gap: 20px;
+  }
+}

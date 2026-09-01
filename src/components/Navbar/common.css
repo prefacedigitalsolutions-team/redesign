@@ -1,0 +1,67 @@
+.common-banner-section {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #12100e;
+  display: flex;
+  align-items: center;
+  padding: 60px 6%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+}
+
+.common-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(11, 11, 11, 0.75) 0%, rgba(11, 11, 11, 0.35) 50%, rgba(11, 11, 11, 0.0) 100%);
+  z-index: 1;
+}
+
+.common-banner-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.common-banner-title {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 0;
+  max-width: 800px;
+  text-transform: uppercase;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .common-banner-section {
+    padding: 40px 5%;
+  }
+  
+  .common-banner-title {
+    font-size: 18px;
+  }
+
+  .explore-btn {
+    padding: 12px 22px;
+    font-size: 0.8rem;
+  }
+}

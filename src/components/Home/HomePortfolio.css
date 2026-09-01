@@ -1,0 +1,200 @@
+.home-portfolio-section {
+  width: 100%;
+  padding: 80px 2%;
+  background-color: #080808;
+  box-sizing: border-box;
+}
+
+/* HEADER SECTION */
+.home-portfolio-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-tagline {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e63946; 
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.portfolio-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* GRID LAYOUT MATCHING IMAGE */
+.portfolio-grid-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 260px);
+  gap: 10px;
+}
+
+/* CARD WRAPPER LINK */
+.portfolio-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0px;
+  text-decoration: none;
+  background-color: #1a1a1a;
+}
+
+/* Left Large Card Span Across 2 Rows */
+.portfolio-card.card-large {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+/* IMAGE SMOOTH TRANSITION */
+.portfolio-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s ease;
+}
+
+/* Default State */
+.img-main {
+  opacity: 1;
+  z-index: 1;
+}
+
+.img-hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* HOVER EFFECT: Cross Fade & Subtle Zoom */
+.portfolio-card:hover .img-hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.portfolio-card:hover .img-main {
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+/* OVERLAY ON HOVER */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-card-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE BREAKPOINTS)
+===================================================== */
+
+/* 1. LARGE TABLETS & SMALL LAPTOPS (1024px and below) */
+@media screen and (max-width: 1024px) {
+  .home-portfolio-section {
+    padding: 60px 4%;
+  }
+
+  .portfolio-grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  /* Large Card resets to span 2 columns on top */
+  .portfolio-card.card-large {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 380px;
+  }
+
+  .portfolio-card {
+    height: 240px;
+  }
+
+  .portfolio-title {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-portfolio-section {
+    padding: 80px 15px;
+  }
+
+  .home-portfolio-header {
+    margin-bottom: 35px;
+    text-align: left; 
+    margin-left: 10px;
+  }
+
+  .portfolio-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-title {
+    font-size: 18px;
+  }
+
+  /* Single column layout (ek ke niche ek) */
+  .portfolio-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Large card reset for 1 column */
+  .portfolio-card.card-large {
+    grid-column: 1 / 2;
+    height: 380px;
+  }
+
+  .portfolio-card {
+    height: 320px;
+  }
+
+  .portfolio-overlay {
+    padding: 15px;
+    justify-content: flex-start;
+  }
+
+  .portfolio-card-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,824 @@
+
+/* Desktop default background */
+.hero-bg-slide {
+  background-image: var(--bg-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+@media screen and (max-width: 768px) {
+  .hero-bg-slide {
+    background-image: var(--bg-mobile);
+  }
+}
+/*image section end */
+
+
+
+/* home banar section start */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 650px; 
+  background-color: #0b0b0b;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+
+
+/* background slider */
+
+.hero-bg-slide {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+
+  transition:
+    opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  z-index: 0;
+}
+
+.hero-bg-slide.active {
+  opacity: 0.65;
+}
+
+
+/* hero overlay */
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 11, 11, 0.95) 0%,
+      rgba(11, 11, 11, 0.3) 50%,
+      rgba(11, 11, 11, 0.1) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* hero contant */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 5vw;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* hero text  */
+
+.hero-text-box {
+  max-width: 500px;
+
+  padding-top: 80px;
+}
+
+.hero-title {
+font-size: clamp(32px, 4.2vw, 60px);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  text-transform: uppercase;
+
+  letter-spacing: -1px;
+
+  margin: 0 0 24px;
+}
+
+.hero-highlight {
+  color: #dc2626;
+
+  text-shadow:
+    0 0 30px rgba(220, 38, 38, 0.4);
+}
+
+
+/* description */
+
+.hero-description {
+  font-size: 15px;
+
+  color: #d1d5db;
+
+  font-weight: 300;
+
+  line-height: 1.6;
+
+  margin: 0 0 40px;
+
+  max-width: 480px;
+}
+
+
+/*hero buttons  */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* explore buttons  */
+
+.explore-btn {
+  background: #ffffff;
+
+  color: #000000;
+
+  border: none;
+
+  padding: 16px 30px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  cursor: pointer;
+
+  transition:
+    all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.explore-btn .btn-arrow {
+  transition:
+    transform 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #dc2626;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(220, 38, 38, 0.4);
+}
+
+.explore-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+
+/* play buttons */
+
+.play-btn {
+  background: transparent;
+
+  border: none;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease;
+}
+
+.play-icon-wrapper {
+  width: 40px;
+  height: 40px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  transition:
+    all 0.4s ease;
+}
+
+.play-btn:hover {
+  color: #dc2626;
+}
+
+.play-btn:hover .play-icon-wrapper {
+  border-color: #dc2626;
+
+  background:
+    rgba(220, 38, 38, 0.15);
+
+  transform: scale(1.1);
+}
+
+
+/* circular section start  */
+
+.hero-badge-container {
+  cursor: pointer;
+
+  position: relative;
+
+  width: 165px;
+  height: 165px;
+
+  margin-right: 6vw;
+  margin-top: 50vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-glow-bg {
+  position: absolute;
+
+  inset: -15px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 38, 38, 0.5) 0%,
+      rgba(220, 38, 38, 0) 75%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease-in-out;
+
+  z-index: 0;
+}
+
+.hero-badge-container:hover .badge-glow-bg {
+  opacity: 1;
+}
+
+.hero-badge {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    rotateBadge 25s linear infinite;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.badge-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.hero-badge-container:hover .hero-badge {
+  animation-play-state: paused;
+
+  transform: scale(1.08);
+}
+
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* scrol andicater */
+
+.hero-scroll {
+  position: absolute;
+
+  bottom: 40px;
+  right: 5vw;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #9ca3af;
+}
+
+.scroll-line {
+  width: 40px;
+
+  height: 1px;
+
+  background-color: #9ca3af;
+}
+
+
+/* scocial slidebar section start  */
+
+.social-sidebar {
+  position: fixed;
+
+  right: 0;
+  top: 50%;
+
+  width: 200px;
+  height: 236px;
+
+  transform:
+    translateY(-50%);
+
+  z-index: 1000;
+
+  pointer-events: none;
+}
+
+
+/*scocial icon */
+
+.social-icon {
+  position: absolute;
+
+  right: 0;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding-left: 15px;
+
+  border-radius:
+    30px 0 0 30px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  pointer-events: auto;
+
+  /*
+    Sirf width animate hogi.
+    Position kabhi change nahi hogi.
+  */
+
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+
+/* most important sectin scocial icons */
+
+.social-icon.phone {
+  top: 0;
+
+  background: #0392cf;
+}
+
+.social-icon.whatsapp {
+  top: 62px;
+
+  background: #25d366;
+}
+
+.social-icon.youtube {
+  top: 124px;
+
+  background: #ff0000;
+}
+
+.social-icon.instagram {
+  top: 186px;
+
+  background:
+    linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
+}
+
+
+/* icons */
+
+.social-icon .s-icon {
+  width: 20px;
+  min-width: 20px;
+
+  height: 20px;
+
+  flex-shrink: 0;
+
+  font-size: 18px;
+
+  display: block;
+}
+
+
+/* text */
+
+.social-text {
+  margin-left: 15px;
+
+  white-space: nowrap;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateX(-10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
+}
+
+
+/* only hover icons  */
+
+.social-icon.phone:hover {
+  width: 190px;
+
+  box-shadow:
+    -8px 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+.social-icon.whatsapp:hover {
+  width: 155px;
+
+  box-shadow:
+    -8px 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.social-icon.youtube:hover {
+  width: 145px;
+
+  box-shadow:
+    -8px 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+.social-icon.instagram:hover {
+  width: 155px;
+
+  box-shadow:
+    -8px 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+/* text shado */
+
+.social-icon:hover .social-text {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(0);
+}
+
+
+/* vedio section start  */
+
+.video-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.85);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    fadeIn 0.3s ease;
+}
+
+.video-modal-content {
+  position: relative;
+
+  width: 80%;
+
+  max-width: 900px;
+
+  aspect-ratio: 16 / 9;
+
+  background: #000000;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+}
+
+.close-modal-btn {
+  position: absolute;
+
+  top: -45px;
+  right: 0;
+
+  background: transparent;
+
+  border: none;
+
+  color: #ffffff;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  color: #dc2626;
+
+  transform: rotate(90deg);
+}
+
+
+/* fade */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@media (max-width: 968px) {
+
+  .hero-badge-container {
+    display: none;
+  }
+
+  .hero-text-box {
+    max-width: 600px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    height: 92svh;
+
+    min-height: 500px;
+  }
+
+  .hero-content {
+    padding:
+      0 25px;
+  }
+
+  .hero-text-box {
+    padding-top: 60px;
+
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size:
+      clamp(36px, 10vw, 58px);
+
+    line-height: 1.08;
+  }
+
+  .hero-description {
+    font-size: 13px;
+
+    max-width: 100%;
+  }
+
+  .hero-description br {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+
+  .explore-btn {
+    padding:
+      14px 22px;
+  }
+
+  .play-btn {
+    font-size: 10px;
+  }
+
+  .hero-scroll {
+    bottom: 25px;
+
+    right: 25px;
+  }
+
+
+  /*mobile scroll*/
+
+  .social-sidebar {
+    width: 180px;
+
+    height: 204px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+
+    padding-left: 12px;
+  }
+
+  .social-icon.phone {
+    top: 0;
+  }
+
+  .social-icon.whatsapp {
+    top: 54px;
+  }
+
+  .social-icon.youtube {
+    top: 108px;
+  }
+
+  .social-icon.instagram {
+    top: 162px;
+  }
+
+  .social-icon .s-icon {
+    width: 18px;
+    min-width: 18px;
+
+    height: 18px;
+
+    font-size: 16px;
+  }
+
+  .social-text {
+    margin-left: 12px;
+
+    font-size: 12px;
+  }
+
+  .social-icon.phone:hover {
+    width: 170px;
+  }
+
+  .social-icon.whatsapp:hover {
+    width: 140px;
+  }
+
+  .social-icon.youtube:hover {
+    width: 130px;
+  }
+
+  .social-icon.instagram:hover {
+    width: 140px;
+  }
+
+  .video-modal-content {
+    width: 92%;
+  }
+
+  .close-modal-btn {
+    top: -40px;
+
+    font-size: 26px;
+  }
+}
+
+

@@ -1,0 +1,153 @@
+.hc-section {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  width: 100%;
+  padding: 30px 0;
+  overflow: hidden;
+  border-bottom: 0.05px solid #7a7a7a;
+  border-top: 0.05px solid #7a7a7a;
+}
+
+.hc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 50px;
+}
+
+/* --- Header / Title & Paragraph Style --- */
+.hc-header {
+  flex: 0 0 350px;
+}
+
+.hc-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color:  #dc2626;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+}
+
+.hc-subtitle-desc {
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Infinite Marquee Wrapper --- */
+.hc-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Scrolling Track --- */
+.hc-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* --- Individual Logo Wrapper --- */
+.hc-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  flex-shrink: 0;
+}
+
+.hc-logo {
+  max-height: 35px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.hc-logo:hover {
+  transform: scale(1.05);
+}
+
+/* --- "And More" Text Style --- */
+.hc-more-brands {
+  font-size: 13px;
+  font-weight: 500;
+  color: #777777;
+  text-transform: lowercase;
+  font-style: italic;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-left: 20px;
+  background: linear-gradient(to right, transparent, #111 20%); /* Background match ke liye agar dark theme ho toh */
+}
+
+/* --- Keyframes for Infinite Smooth Marquee --- */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+@media (max-width: 992px) {
+  .hc-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .hc-header {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  .hc-title {
+    font-size: 14px;
+    letter-spacing: 1.2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hc-section {
+    margin-top: -10px;
+
+    padding: 30px 0;
+  }
+
+  .hc-desktop-br {
+    display: none;
+  }
+
+  .hc-subtitle-desc {
+    font-size: 12px;
+  }
+
+  .hc-marquee-track {
+    gap: 35px;
+    animation-duration: 25s;
+  }
+
+  .hc-logo {
+    max-height: 28px;
+  }
+
+  .hc-more-brands {
+    font-size: 12px;
+  }
+}

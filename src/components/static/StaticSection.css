@@ -1,0 +1,141 @@
+/* SECTION WRAPPER WITH PARALLAX FIXED BG */
+.static-main-section {
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 8%;
+  box-sizing: border-box;
+}
+
+/* OVERLAY */
+.static-section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.static-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* FLOATING WHITE CARD (EXACT MATCH TO REFERENCE IMAGE) */
+.static-content-card {
+  background: #ffffff;
+  max-width: 470px;
+  padding: 50px 45px;
+  border-radius: 0px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* HEADING */
+.static-card-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(8, 137, 177);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* COUNTERS INSIDE CARD */
+.static-card-counters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 25px;
+  border-top: 2px solid rgb(8, 137, 177);
+}
+
+.card-counter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-counter-number {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color:  #dc2626;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.counter-suffix {
+  font-size: 1.6rem;
+  color:  #dc2626;
+}
+
+.card-counter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color:  #dc2626;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .static-main-section {
+    padding: 60px 5%;
+  }
+
+  .static-content-card {
+    max-width: 400px;
+    padding: 40px 30px;
+  }
+
+  .static-card-heading {
+    font-size: 1.8rem;
+  }
+
+  .card-counter-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .static-main-section {
+    background-attachment: scroll;
+    padding: 40px 20px;
+    justify-content: center;
+  }
+
+  .static-content-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 30px 22px;
+    gap: 25px;
+  }
+
+  .static-card-heading {
+    font-size: 1.5rem;
+  }
+
+  .static-card-counters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}

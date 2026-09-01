@@ -1,0 +1,263 @@
+.hs-section {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  padding: 80px 30px;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden; /* Screen overflow and horizontal scroll fix */
+}
+
+.hs-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.hs-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hs-subtitle {
+  color: #e50914;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.hs-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* MAIN OUTLINE CONTAINER */
+.hs-main-outline-box {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 30px;
+  align-items: stretch;
+  border: 1px solid #222222;
+  background-color: #0f0f0f;
+  padding: 30px;
+  border-radius: 2px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Left Service List */
+.hs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hs-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border: 1px solid #272727;
+  background-color: #141414;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hs-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0; /* Text truncation/overflow protection */
+}
+
+.hs-item-num {
+  color: #555555;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.hs-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #dfdddd;
+  transition: color 0.3s ease;
+}
+
+/* Active Item Outline & Glow */
+.hs-item.active {
+  background-color: #1a1616;
+  border: 1px solid #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.35), inset 0 0 8px rgba(229, 9, 20, 0.15);
+}
+
+.hs-item.active .hs-item-num {
+  color: #e50914;
+}
+
+.hs-item.active .hs-item-title {
+  color: #ffffff;
+}
+
+.hs-arrow-icon {
+  color: #e50914;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* RIGHT PREVIEW CARD BOX */
+.hs-preview-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hs-preview-card {
+  border: 1px solid #222222;
+  background-color: #141414;
+  border-radius: 1px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. TOP IMAGE WRAPPER */
+.hs-card-image-wrapper {
+  width: 100%;
+  height: 325px;
+  overflow: hidden;
+  background-color: #000000;
+  pointer-events: none;
+}
+
+.hs-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* 2. BOTTOM CONTENT SECTION */
+.hs-card-content {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* DESCRIPTION LEFT + BUTTON RIGHT ROW */
+.hs-desc-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.hs-card-desc {
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+
+
+@media (max-width: 1024px) {
+  .hs-section {
+    padding: 60px 20px;
+  }
+
+  .hs-main-outline-box {
+    grid-template-columns: 1fr; 
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .hs-card-image-wrapper {
+    height: 280px;
+  }
+}
+   
+@media (max-width: 768px) {
+  .hs-section {
+    padding: 60px 15px;
+  }
+
+  .hs-header {
+    margin-bottom: 25px;
+  }
+
+  .hs-title {
+    font-size: 22px;
+  }
+
+  .hs-subtitle {
+    font-size: 11px;
+  }
+
+  .hs-main-outline-box {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .hs-item {
+    padding: 14px 16px;
+  }
+
+  .hs-item-title {
+    font-size: 13px;
+  }
+
+  .hs-item-num {
+    font-size: 14px;
+  }
+
+  .hs-card-image-wrapper {
+    height: 220px;
+  }
+
+  .hs-card-content {
+    padding: 16px;
+  }
+
+ 
+  .hs-desc-btn-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    
+  }
+
+  .hs-card-desc {
+    font-size: 13px;
+    text-align: left;
+ 
+  }
+
+  .explore-btn {
+    justify-content: center;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hs-section .explore-btn {
+    width: fit-content;
+    max-width: 180px;
+    padding: 10px 18px;
+  }
+}
+
+

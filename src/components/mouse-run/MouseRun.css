@@ -1,0 +1,104 @@
+@media (pointer: fine) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse) {
+  .pro-cursor-dot,
+  .pro-cursor-outline,
+  .cursor-star-particle {
+    display: none !important;
+  }
+}
+
+/* Core Dot */
+.pro-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  margin-top: -3px;
+  margin-left: -3px;
+  will-change: transform;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+/* Outer Fluid Ring */
+.pro-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(230, 57, 70, 0.65);
+  background-color: rgba(230, 57, 70, 0.03);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  margin-top: -19px;
+  margin-left: -19px;
+  will-change: transform;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+/* Star / Sparkle Trail Elements */
+.cursor-star-particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 6px #e63946, 0 0 2px #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99997;
+  transform: translate(-50%, -50%);
+  animation: starFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+}
+
+/* Hover States for Interactive Elements */
+body.pro-cursor-hover .pro-cursor-outline {
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+body.pro-cursor-hover .pro-cursor-dot {
+  transform: scale(0.3);
+  background-color: #e63946;
+}
+
+/* Click Active State */
+body.pro-cursor-active .pro-cursor-outline {
+  transform: scale(0.8) !important;
+  background-color: rgba(230, 57, 70, 0.3);
+  border-color: #e63946;
+}
+
+body.pro-cursor-active .pro-cursor-dot {
+  transform: scale(0.15);
+}

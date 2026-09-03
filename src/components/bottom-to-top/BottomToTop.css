@@ -1,0 +1,94 @@
+.btt-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.btt-container.btt-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btt-button {
+  position: relative;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
+}
+
+.btt-button:hover {
+  transform: scale(1.1);
+  background-color: #1a1a1a;
+}
+
+.btt-icon {
+  font-size: 20px;
+  color: #54c0ff;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.btt-button:hover .btt-icon {
+  transform: translateY(-3px);
+}
+
+/* SVG Progress Ring Styles */
+.btt-progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 50px;
+  height: 50px;
+}
+
+.btt-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3;
+}
+
+.btt-ring-fill {
+  fill: none;
+  stroke: #54c0ff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+  .btt-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .btt-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .btt-progress-ring {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .btt-icon {
+    font-size: 18px;
+  }
+}

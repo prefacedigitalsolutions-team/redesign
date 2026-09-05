@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 
 import "./Navbar.css";
@@ -8,6 +7,8 @@ import logoImg from "../../assets/home/logo.png";
 import LanguageSwitcher from "../Language/LanguageSwitcher";
 
 function Navbar() {
+  const location = useLocation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -24,7 +25,16 @@ function Navbar() {
   const linksRef = useRef(null);
   const rightRef = useRef(null);
 
-  // Sticky navbar
+  // ================= ACTIVE ROUTE =================
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
+  const isPagesActive = () => {
+    return ["/catalogue", "/photoshoot", "/web"].includes(location.pathname);
+  };
+
+  // ================= STICKY NAVBAR =================
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -37,7 +47,7 @@ function Navbar() {
     };
   }, []);
 
-  // GSAP animation - Desktop
+  // ================= GSAP ANIMATION - DESKTOP =================
   useEffect(() => {
     if (window.innerWidth > 900) {
       const tl = gsap.timeline({
@@ -74,7 +84,7 @@ function Navbar() {
     }
   }, []);
 
-  // Form input
+  // ================= FORM INPUT =================
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -82,14 +92,11 @@ function Navbar() {
     });
   };
 
-  // Form submit
+  // ================= FORM SUBMIT =================
   const handleSubmit = (e) => {
     e.preventDefault();
-
     alert(`Thank you ${formData.name}! Your message has been sent.`);
-
     setIsModalOpen(false);
-
     setFormData({
       name: "",
       mobile: "",
@@ -97,7 +104,7 @@ function Navbar() {
     });
   };
 
-  // Close mobile menu
+  // ================= CLOSE MOBILE MENU =================
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setIsDropdownOpen(false);
@@ -110,7 +117,7 @@ function Navbar() {
         ref={navRef}
         className={`navbar ${isScrolled ? "scrolled" : ""}`}
       >
-        {/* Logo */}
+        {/* ================= LOGO ================= */}
         <div ref={logoRef} className="nav-logo">
           <Link to="/">
             <img
@@ -126,9 +133,11 @@ function Navbar() {
 
           {/* HOME */}
           <li>
-            <Link to="/" className="active">
+            <Link
+              to="/"
+              className={isActive("/") ? "active" : ""}
+            >
               HOME
-
               <svg
                 className="nav-line"
                 viewBox="0 0 100 15"
@@ -139,11 +148,13 @@ function Navbar() {
             </Link>
           </li>
 
-          {/* ABOUT */}
+          {/* ABOUT US */}
           <li>
-            <Link to="/about">
+            <Link
+              to="/about"
+              className={isActive("/about") ? "active" : ""}
+            >
               ABOUT US
-
               <svg
                 className="nav-line"
                 viewBox="0 0 100 15"
@@ -156,9 +167,11 @@ function Navbar() {
 
           {/* SERVICES */}
           <li>
-            <Link to="/services">
+            <Link
+              to="/services"
+              className={isActive("/services") ? "active" : ""}
+            >
               SERVICES
-
               <svg
                 className="nav-line"
                 viewBox="0 0 100 15"
@@ -169,11 +182,11 @@ function Navbar() {
             </Link>
           </li>
 
-          {/* PAGES DROPDOWN */}
+          {/* ================= PAGES DROPDOWN ================= */}
           <li className="has-dropdown">
             <button
               type="button"
-              className="pages-button"
+              className={`pages-button ${isPagesActive() ? "active" : ""}`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               PAGES <span className="arrow">▾</span>
@@ -188,45 +201,63 @@ function Navbar() {
             </button>
 
             <ul className="dropdown-menu">
-
               <li>
-                <Link to="/#blog">
+                <Link 
+                  to="/catalogue"
+                  onClick={() => setIsDropdownOpen(false)}
+                  className={isActive("/catalogue") ? "active" : ""}
+                >
                   CATALOGUE
                 </Link>
               </li>
 
               <li>
-                <Link to="/#news">
+                <Link 
+                  to="/photoshoot"
+                  onClick={() => setIsDropdownOpen(false)}
+                  className={isActive("/photoshoot") ? "active" : ""}
+                >
                   PHOTOSHOOT
                 </Link>
               </li>
 
               <li>
-                <Link to="/#press">
+                <Link 
+                  to="/web" 
+                  onClick={() => setIsDropdownOpen(false)}
+                  className={isActive("/web") ? "active" : ""}
+                >
                   WEB DESIGNING
                 </Link>
               </li>
 
               <li>
-                <Link to="/#news">
+                <Link 
+                  to="/about"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
                   WHY PREFACE
                 </Link>
               </li>
 
               <li>
-                <Link to="/#press">
+                <Link 
+                  to="/services"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
                   DIGITAL MARKETING
                 </Link>
               </li>
-
             </ul>
           </li>
 
-          {/* CONTACT */}
+          {/* CONTACT US */}
           <li>
-            <Link to="/contact">
+            <Link
+              to="/contact"
+              className={isActive("/contact") ? "active" : ""}
+            >
               CONTACT US
-
               <svg
                 className="nav-line"
                 viewBox="0 0 100 15"
@@ -252,7 +283,7 @@ function Navbar() {
             <span className="arrow-icon">→</span>
           </button>
 
-          {/* Hamburger */}
+          {/* HAMBURGER */}
           <div
             className={`menu-icon-wrapper ${
               isMobileMenuOpen ? "open" : ""
@@ -268,7 +299,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* mobile menu*/}
       <div
         className={`mobile-menu-drawer ${
           isMobileMenuOpen ? "active" : ""
@@ -278,21 +309,33 @@ function Navbar() {
 
           {/* HOME */}
           <li>
-            <Link to="/" onClick={closeMobileMenu}>
+            <Link
+              to="/"
+              onClick={closeMobileMenu}
+              className={isActive("/") ? "active" : ""}
+            >
               HOME
             </Link>
           </li>
 
-          {/* ABOUT */}
+          {/* ABOUT US */}
           <li>
-            <Link to="/about" onClick={closeMobileMenu}>
+            <Link
+              to="/about"
+              onClick={closeMobileMenu}
+              className={isActive("/about") ? "active" : ""}
+            >
               ABOUT US
             </Link>
           </li>
 
           {/* SERVICES */}
           <li>
-            <Link to="/services" onClick={closeMobileMenu}>
+            <Link
+              to="/services"
+              onClick={closeMobileMenu}
+              className={isActive("/services") ? "active" : ""}
+            >
               SERVICES
             </Link>
           </li>
@@ -304,7 +347,7 @@ function Navbar() {
               onClick={() =>
                 setIsDropdownOpen(!isDropdownOpen)
               }
-              className="mobile-dropdown-toggle"
+              className={`mobile-dropdown-toggle ${isPagesActive() ? "active" : ""}`}
             >
               PAGES{" "}
               <span>
@@ -314,11 +357,11 @@ function Navbar() {
 
             {isDropdownOpen && (
               <ul className="mobile-dropdown-menu">
-
                 <li>
                   <Link
-                    to="/#blog"
+                    to="/catalogue"
                     onClick={closeMobileMenu}
+                    className={isActive("/catalogue") ? "active" : ""}
                   >
                     CATALOGUE
                   </Link>
@@ -326,8 +369,9 @@ function Navbar() {
 
                 <li>
                   <Link
-                    to="/#news"
+                    to="/photoshoot"
                     onClick={closeMobileMenu}
+                    className={isActive("/photoshoot") ? "active" : ""}
                   >
                     PHOTOSHOOT
                   </Link>
@@ -335,8 +379,9 @@ function Navbar() {
 
                 <li>
                   <Link
-                    to="/#press"
+                    to="/web"
                     onClick={closeMobileMenu}
+                    className={isActive("/web") ? "active" : ""}
                   >
                     WEB DESIGNING
                   </Link>
@@ -344,7 +389,7 @@ function Navbar() {
 
                 <li>
                   <Link
-                    to="/#news"
+                    to="/about"
                     onClick={closeMobileMenu}
                   >
                     WHY PREFACE
@@ -353,13 +398,12 @@ function Navbar() {
 
                 <li>
                   <Link
-                    to="/#press"
+                    to="/services"
                     onClick={closeMobileMenu}
                   >
                     DIGITAL MARKETING
                   </Link>
                 </li>
-
               </ul>
             )}
 
@@ -367,7 +411,11 @@ function Navbar() {
 
           {/* CONTACT */}
           <li>
-            <Link to="/contact" onClick={closeMobileMenu}>
+            <Link
+              to="/contact"
+              onClick={closeMobileMenu}
+              className={isActive("/contact") ? "active" : ""}
+            >
               CONTACT US
             </Link>
           </li>
@@ -375,7 +423,7 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* ================= MODAL ================= */}
+      {/* modal*/}
       {isModalOpen && (
         <div className="modal-overlay">
 
@@ -459,4 +507,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

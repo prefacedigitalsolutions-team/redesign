@@ -1,0 +1,283 @@
+.intro-section {
+  width: 100%;
+  background-color: #000000;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+/* top row*/
+.intro-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  align-items: stretch;
+}
+
+.intro-top-left {
+  background-color: #98cfe8;
+  padding: 30px 35px;
+  display: flex;
+  align-items: center;
+}
+  
+.intro-welcome-text {
+  color: #2b2a2a;
+  font-size: 20px;
+  font-weight: medium;
+  line-height: 1.75;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.intro-top-right {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.intro-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.intro-side-action {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  color: #ffffff;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= BOTTOM ROW ================= */
+.intro-bottom-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  width: 100%;
+  min-height: 320px;
+}
+
+.intro-bottom-pink-block {
+  background-color: #98cfe8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-rotated-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 3rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+}
+
+.intro-bottom-white-block {
+  background-color: #ffffff;
+  padding: 35px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-desc {
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.intro-desc:last-child {
+  margin-bottom: 0;
+}
+
+.intro-bottom-coral-block {
+  background-color: #e56b5d;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 991px) {
+
+  .intro-section {
+    padding: 14px;
+  }
+
+  /* TOP */
+  .intro-top-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro-top-left {
+    padding: 25px;
+  }
+
+  .intro-welcome-text {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+
+  .intro-top-right {
+    height: 380px;
+  }
+
+  .intro-side-action {
+    right: 10px;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* BOTTOM */
+  .intro-bottom-row {
+    grid-template-columns: 140px 1fr 140px;
+    min-height: 280px;
+  }
+
+  .intro-bottom-white-block {
+    padding: 25px 28px;
+  }
+
+  .intro-rotated-title {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .intro-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+
+  .intro-section {
+    padding: 10px;
+  }
+
+  /* TOP ROW */
+  .intro-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-top-left {
+    min-height: 180px;
+    padding: 28px 24px;
+    order: 1;
+  }
+
+  .intro-welcome-text {
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
+
+  .intro-top-right {
+    height: 320px;
+    order: 2;
+  }
+
+  .intro-side-action {
+    right: 8px;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
+
+
+  /* BOTTOM ROW */
+  .intro-bottom-row {
+    grid-template-columns: 70px 1fr;
+    min-height: auto;
+  }
+
+  /* PINK BLOCK */
+  .intro-bottom-pink-block {
+    min-height: 300px;
+  }
+
+  .intro-rotated-title {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+
+  /* WHITE CONTENT */
+  .intro-bottom-white-block {
+    padding: 25px 20px;
+  }
+
+  .intro-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  /* CORAL BLOCK */
+  .intro-bottom-coral-block {
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .intro-section {
+    padding: 8px;
+  }
+
+  .intro-top-left {
+    min-height: 160px;
+    padding: 22px 18px;
+  }
+
+  .intro-welcome-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    letter-spacing: 0.5px;
+    font-size: medium;
+  }
+
+  .intro-top-right {
+    height: 260px;
+  }
+
+  .intro-side-action {
+    right: 5px;
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+  }
+
+
+  /* BOTTOM */
+  .intro-bottom-row {
+    grid-template-columns: 55px 1fr;
+  }
+
+  .intro-bottom-pink-block {
+    min-height: 270px;
+  }
+
+  .intro-rotated-title {
+    font-size: 1.49rem;
+    letter-spacing: 0.5px;
+  }
+
+  .intro-bottom-white-block {
+    padding: 20px 16px;
+  }
+
+  .intro-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+}
+

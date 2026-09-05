@@ -283,3 +283,44 @@ export const playCardsAnim = (elements) => {
     }
   );
 };
+
+
+/* =====================================================
+   6. ABOUT BANNER ANIMATION (NEWLY ADDED)
+===================================================== */
+
+export const playAboutAnim = (refs) => {
+  if (!refs) return;
+
+  const { section, visual, content, eyebrow, title, desc, meta } = refs;
+  const elements = [section, visual, content];
+
+  if (elements.some((el) => !el)) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    defaults: {
+      ease: 'power3.out'
+    }
+  });
+
+  // Left Image Cluster Slide In
+  tl.fromTo(
+    visual,
+    { opacity: 0, x: -40 },
+    { opacity: 1, x: 0, duration: 1.1 }
+  )
+  // Right Content Elements Stagger
+  .fromTo(
+    [eyebrow, title, desc, meta],
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.8, stagger: 0.15 },
+    '-=0.7'
+  );
+
+  return tl;
+};

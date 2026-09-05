@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* --- Page & Section Layout (Pure Black, White, Gray, Red) --- */
+.catalog-showcase-section {
+  width: 100%;
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 100px 5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.showcase-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* --- Header Section --- */
+.showcase-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 28px;
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-header:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.showcase-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: #a1a1aa;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.meta-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.showcase-title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.showcase-title span {
+  color: #71717a;
+  font-weight: 300;
+  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-title:hover span {
+  color: #d4d4d8;
+}
+
+/* --- Image Grid Setup --- */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 20px;
+  height: 440px;
+}
+
+.showcase-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 
+  ZOOM-IN EFFECT: 
+  Image starts slightly zoomed in (scale 1.12) by default, 
+  and when you hover the card, it smoothly settles to normal (scale 1.0) 
+  giving a polished inward-focus cinematic transition.
+*/
+.showcase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) contrast(105%);
+  transform: scale(1.12);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, filter;
+}
+
+/* Hover Physics */
+.showcase-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(239, 68, 68, 0.7);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 25px rgba(239, 68, 68, 0.2);
+}
+
+.showcase-card:hover img {
+  transform: scale(1.0); /* Zooms into full focus */
+  filter: grayscale(0%) contrast(110%);
+}
+
+.card-overlay-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #f4f4f5;
+  font-weight: 500;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              background 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.showcase-card:hover .card-overlay-badge {
+  transform: translateY(-3px);
+  background: #ef4444; /* Pure Red Accent */
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.5);
+}
+
+/* --- Footer Information Bar --- */
+.showcase-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.showcase-desc {
+  font-size: 15px;
+  color: #a1a1aa;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 480px;
+  font-weight: 300;
+  transition: color 0.5s ease;
+}
+
+.showcase-desc:hover {
+  color: #ffffff;
+}
+
+.showcase-metrics {
+  display: flex;
+  gap: 35px;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.metric-item strong {
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.5s ease;
+}
+
+.metric-item:hover strong {
+  color: #ef4444;
+}
+
+/* --- Keyframes --- */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .showcase-card {
+    height: 300px;
+  }
+
+  .showcase-title {
+    font-size: 36px;
+  }
+
+  .showcase-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

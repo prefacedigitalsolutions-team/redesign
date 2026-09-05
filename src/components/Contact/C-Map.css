@@ -1,0 +1,192 @@
+/* =========================================
+   C-MAP SECTION STYLING (COLORFUL MAP & PROFESSIONAL RIGHT CARD)
+   ========================================= */
+
+.c-map-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.c-map-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* LEFT MAP COLUMN (COLORFUL - NO FILTER) */
+.c-map-column {
+  width: 100%;
+  min-height: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  /* Removed grayscale/invert filter so Google Map is fully colorful */
+}
+
+/* RIGHT INFO COLUMN */
+.c-info-column-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-box {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #888888;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4ade80;
+  font-weight: 600;
+  background: rgba(74, 222, 128, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+.info-card-box h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.address-text {
+  font-size: 14px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+}
+
+/* PROFESSIONAL SUPPORT FEATURES */
+.support-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.support-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px;
+  border-radius: 1px;
+}
+
+.support-icon {
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.support-item h4 {
+  font-size: 13px;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+  font-weight: 600;
+}
+
+.support-item p {
+  font-size: 12px;
+  color: #999999;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hours-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin-bottom: 20px;
+}
+
+.direction-btn {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 1px;
+  padding: 15px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.direction-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .c-map-container {
+    grid-template-columns: 1fr;
+  }
+  .c-map-column {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-card-box {
+    padding: 25px 20px;
+  }
+}

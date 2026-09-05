@@ -1,0 +1,174 @@
+.journey-section {
+  width: 100%;
+  background-color: #0b0b0b;
+  padding: 60px 20px;
+  color: #ffffff;
+  font-family: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.journey-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.journey-header {
+  margin-bottom: 0px;
+}
+
+.journey-eyebrow {
+  display: block;
+  color: #e9412e;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.journey-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.journey-timeline-wrapper {
+  position: relative;
+  margin: 40px 0 20px 0;
+  padding: 20px 0;
+}
+
+/* Horizontal connecting line */
+.journey-line {
+  position: absolute;
+  top: 31px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background-color: #2a2a2a;
+  z-index: 1;
+}
+
+.journey-nodes-grid {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.journey-node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  opacity: 0; 
+}
+
+.journey-dot-wrapper {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  margin-top:5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.journey-red-dot {
+  width: 12px;
+  height: 12px;
+ 
+  background-color: #eb2a14;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* Smooth blinking ring effect */
+.journey-dot-pulse {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(229, 107, 93, 0.6);
+  border-radius: 50%;
+  animation: smoothBlink 2.2s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes smoothBlink {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+.journey-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-year {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.journey-label {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 400;
+  max-width: 150px;
+  line-height: 1.4;
+   
+}
+
+@media (max-width: 768px) {
+  .journey-nodes-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  .journey-line {
+    top: 0;
+    bottom: 0;
+    left: 53px;
+    right: auto;
+    width: 2px;
+    height: 100%;
+  }
+
+  .journey-node-item {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  .journey-dot-wrapper {
+    margin-bottom: 0;
+    margin-right: 25px;
+  }
+
+  .journey-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

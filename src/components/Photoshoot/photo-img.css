@@ -1,0 +1,171 @@
+.photo-gallery-section {
+  width: 100%;
+  background-color: #030303;
+  color: #ffffff;
+  padding: 80px 6% 120px 6%;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  position: relative;
+}
+
+.section-divider {
+  width: 88%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 auto 80px auto;
+}
+
+.photo-gallery-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gallery-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.gallery-title-box h2 {
+  font-size: 46px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  margin: 0 0 10px 0;
+}
+
+.gallery-title-box p {
+  font-size: 16px;
+  color: #9ca3af;
+  margin: 0;
+  font-weight: 300;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #a1a1aa;
+  padding: 12px 22px;
+  border-radius: 1px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.photos-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.photo-card {
+  position: relative;
+  aspect-ratio: 16/11; /* Halka sa height bada diya gaya hai (16/10 se 16/11 kiya hai) */
+  background-color: #111;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-card:hover .photo-wrapper img {
+  transform: scale(1.05);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-index {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ef4444;
+  margin-bottom: 4px;
+}
+
+.photo-overlay h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.photo-cat {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a1a1aa;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .photos-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gallery-title-box h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .photos-grid-container {
+    grid-template-columns: 1fr;
+  }
+}

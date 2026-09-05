@@ -1,0 +1,841 @@
+
+.ss-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 140px 50px 80px;
+
+  background: #050505;
+
+  color: #fff;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* main gride  */
+
+.ss-intro {
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 38% 62%;
+
+  gap: 55px;
+}
+
+
+/* left side */
+
+.ss-intro-left {
+  position: relative;
+}
+
+
+.ss-sticky-title {
+
+  position: sticky;
+
+  top: 90px;
+
+  padding-top: 40px;
+
+}
+
+
+/* kicker */
+
+.ss-kicker {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #fff;
+}
+
+
+.ss-kicker-dot {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #fff;
+}
+
+
+/* heading  */
+
+.ss-heading {
+  margin: 0;
+
+  font-size: 11vh;
+
+  line-height: 0.86;
+
+  font-weight: 400;
+
+  letter-spacing: -6px;
+}
+
+
+.ss-heading em {
+  color: #555;
+
+  font-weight: 300;
+
+  font-style: italic;
+}
+
+
+.ss-heading-line {
+  width: 75px;
+
+  height: 1px;
+
+  margin: 40px 0 25px;
+
+  background: #555;
+}
+
+
+/*description */
+
+.ss-description {
+  max-width: 380px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #d1d1d1;
+}
+
+
+/* extra business content*/
+
+.ss-extra-content {
+  margin-top: 50px;
+
+  max-width: 430px;
+}
+
+
+/*business intro*/
+
+.ss-business-intro {
+  padding-bottom: 30px;
+  margin-top:100px;
+
+  border-bottom: 1px solid #252525;
+}
+
+
+.ss-mini-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #ffffff;
+}
+
+
+.ss-business-intro p {
+  max-width: 400px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: #e4e4e4;
+}
+
+
+/* service tag */
+
+.ss-service-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  padding: 34px 0;
+
+  border-bottom: 1px solid #252525;
+}
+
+
+.ss-service-tags span {
+  padding: 8px 11px;
+
+  border: 1px solid #8f8f8f;
+
+  font-size: 9px;
+
+  letter-spacing: 1.3px;
+
+  color: #e7e7e7;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.ss-service-tags span:hover {
+  color: #fff;
+
+  border-color: #666;
+
+  background: #151515;
+}
+
+
+/* company notes */
+
+.ss-company-note {
+  display: grid;
+
+  grid-template-columns: 38px 1fr;
+
+  gap: 18px;
+
+  padding: 100px 0 28px;
+
+  border-bottom: 1px solid #252525;
+}
+
+
+.ss-note-number {
+  padding-top: 5px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color: #d8d8d8;
+}
+
+
+.ss-note-content h4 {
+  margin: 0;
+
+  font-size: 25px;
+
+  line-height: 0.95;
+
+  font-weight: 300;
+
+  letter-spacing: -1.5px;
+
+  color: #eee;
+}
+
+
+.ss-note-content h4 em {
+  font-weight: 300;
+
+  font-style: italic;
+
+  color: #555;
+}
+
+
+.ss-note-content p {
+  max-width: 340px;
+
+  margin: 20px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+
+  color: #e9e9e9;
+}
+
+
+/* business bottom*/
+
+.ss-business-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 18px;
+}
+
+
+.ss-business-bottom span {
+  font-size: 10px;
+
+  letter-spacing: 1.7px;
+
+  color: #e9e9e9;
+}
+
+
+.ss-business-bottom span:not(:last-child)::after {
+  content: "·";
+
+  margin-left: 15px;
+
+  color: #333;
+}
+
+
+/* service list*/
+
+.ss-list {
+  width: 100%;
+}
+
+
+.ss-row {
+  position: relative;
+
+  min-height: 175px;
+
+  display: grid;
+
+  grid-template-columns: 65px 1fr 30px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border-top: 1px solid #292929;
+
+  cursor: pointer;
+
+  transition:
+    padding 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.4s ease;
+}
+
+
+.ss-row:last-child {
+  border-bottom: 1px solid #292929;
+}
+
+
+/* number */
+
+.ss-number {
+  align-self: start;
+
+  padding-top: 25px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color: #bebebe;
+
+  transition: color 0.3s ease;
+}
+
+
+/*service main */
+
+.ss-main {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+.ss-title-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.ss-title-row h3 {
+  margin: 0;
+
+  font-size: 4vh;
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.4s ease;
+}
+
+
+.ss-main p {
+  max-width: 450px;
+
+  margin: 18px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #666;
+
+  transition: color 0.4s ease;
+}
+
+
+/* arrow*/
+
+.ss-arrow {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #333;
+
+  flex-shrink: 0;
+
+  font-size: 18px;
+
+  color: #aaa;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* =====================================================
+   HOVER IMAGE
+===================================================== */
+
+.ss-hover-image {
+  position: absolute;
+
+  width: 270px;
+
+  height: 190px;
+
+  right: 80px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    scale(0.92);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+.ss-hover-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+
+.ss-row:hover .ss-hover-image img {
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   INDICATOR
+===================================================== */
+
+.ss-indicator {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.ss-indicator span {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #444;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* =====================================================
+   SERVICE HOVER
+===================================================== */
+
+.ss-row:hover {
+  padding-left: 12px;
+}
+
+
+.ss-row:hover .ss-number {
+  color: #fff;
+}
+
+
+.ss-row:hover .ss-title-row h3 {
+  transform: translateX(8px);
+}
+
+
+.ss-row:hover .ss-main p {
+  color: #999;
+}
+
+
+.ss-row:hover .ss-arrow {
+  background: #fff;
+
+  color: #000;
+
+  transform: rotate(45deg);
+}
+
+
+.ss-row:hover .ss-indicator span {
+  background: #fff;
+
+  transform: scale(1.8);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.ss-footer {
+  max-width: 1450px;
+
+  margin: 100px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #555;
+}
+
+
+.ss-footer div {
+  flex: 1;
+
+  height: 1px;
+
+  background: #292929;
+}
+
+.ss-arrow {
+  text-decoration: none !important;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .ss-section {
+    padding: 80px 15px 50px;
+  }
+
+
+  .ss-intro {
+    display: block;
+  }
+
+
+  .ss-sticky-title {
+    position: static;
+
+    padding-top: 55px;
+
+    padding-bottom: 60px;
+  }
+
+
+  .ss-heading {
+    font-size: clamp(55px, 16vw, 78px);
+
+    letter-spacing: -4px;
+  }
+
+
+  .ss-heading-line {
+    margin: 28px 0 20px;
+  }
+
+
+  .ss-description {
+    max-width: 360px;
+
+    font-size: 12px;
+  }
+
+
+  /* LEFT CONTENT */
+
+  .ss-extra-content {
+    margin-top: 45px;
+
+    max-width: 100%;
+  }
+
+
+  .ss-business-intro {
+    padding-bottom: 24px;
+  }
+
+
+  .ss-business-intro p {
+    max-width: 100%;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+
+  .ss-service-tags {
+    gap: 6px;
+
+    padding: 20px 0;
+  }
+
+
+  .ss-service-tags span {
+    font-size: 6px;
+
+    padding: 7px 9px;
+  }
+
+
+  .ss-company-note {
+    padding: 25px 0;
+  }
+
+
+  .ss-note-content h4 {
+    font-size: 25px;
+  }
+
+
+  .ss-note-content p {
+    font-size: 10px;
+  }
+
+
+  .ss-business-bottom {
+    padding-top: 17px;
+  }
+
+
+  .ss-business-bottom span {
+    font-size: 6px;
+  }
+
+
+  /* SERVICE ROW */
+
+  .ss-row {
+    min-height: auto;
+
+    display: block;
+
+    padding: 25px 0 28px;
+  }
+
+
+  .ss-row:hover {
+    padding-left: 0;
+  }
+
+
+  .ss-number {
+    padding: 0;
+
+    margin-bottom: 15px;
+  }
+
+
+  .ss-title-row h3 {
+    font-size: 30px;
+
+    letter-spacing: -1.3px;
+  }
+
+
+  .ss-row:hover .ss-title-row h3 {
+    transform: none;
+  }
+
+
+  .ss-main p {
+    max-width: 90%;
+
+    margin-top: 13px;
+
+    font-size: 11px;
+  }
+
+
+  .ss-arrow {
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 15px;
+  }
+
+
+  /* MOBILE IMAGE */
+
+  .ss-hover-image {
+    position: relative;
+
+    right: auto;
+
+    top: auto;
+
+    width: 100%;
+
+    height: 240px;
+
+    margin-top: 22px;
+
+    transform: none;
+
+    opacity: 1;
+
+    box-shadow: none;
+  }
+
+
+  .ss-hover-image img {
+    transform: scale(1);
+  }
+
+
+  .ss-indicator {
+    display: none;
+  }
+
+
+  /* FOOTER */
+
+  .ss-footer {
+    margin-top: 65px;
+
+    gap: 12px;
+
+    font-size: 7px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .ss-section {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  .ss-heading {
+    font-size: 54px;
+  }
+
+
+  .ss-title-row h3 {
+    font-size: 27px;
+  }
+
+
+  .ss-hover-image {
+    height: 220px;
+  }
+
+
+  .ss-note-content h4 {
+    font-size: 23px;
+  }
+
+
+  .ss-business-bottom span:not(:last-child)::after {
+    margin-left: 8px;
+  }
+
+}
+

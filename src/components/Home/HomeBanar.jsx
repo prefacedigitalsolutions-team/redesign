@@ -46,9 +46,7 @@ function HomeBanar() {
   const heroScrollRef = useRef(null);
   const socialIconsRef = useRef([]);
 
-  /* =====================================================
-     BANNER AUTO SLIDER
-  ===================================================== */
+  /* banar auto slider */
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
@@ -59,9 +57,7 @@ function HomeBanar() {
     };
   }, []);
 
-  /* =====================================================
-     GSAP HERO ANIMATION
-  ===================================================== */
+  /* gsap hero animation */
   useEffect(() => {
     const animation = playHeroAnim({
       section: heroSectionRef.current,
@@ -82,9 +78,7 @@ function HomeBanar() {
     };
   }, []);
 
-  /* =====================================================
-     ESC KEY VIDEO CLOSE
-  ===================================================== */
+  /* escape key video close */
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -101,9 +95,8 @@ function HomeBanar() {
 
   return (
     <section ref={heroSectionRef} className="hero-section">
-      {/* =================================================
-          BACKGROUND SLIDES (DESKTOP & MOBILE RESPONSIVE)
-      ================================================= */}
+
+      {/*BACKGROUND SLIDES (DESKTOP & MOBILE RESPONSIVE) */}
       {bannerImages.map((slide, index) => (
         <div
           key={index}
@@ -119,9 +112,7 @@ function HomeBanar() {
 
       <div className="hero-overlay"></div>
 
-      {/* =================================================
-          HERO CONTENT
-      ================================================= */}
+      {/* hero content */}
       <div className="hero-content">
         {/* TEXT BOX */}
         <div ref={heroTextBoxRef} className="hero-text-box">
@@ -185,12 +176,12 @@ function HomeBanar() {
                 textAnchor="middle"
               >
                 <textPath href="#exactCirclePath" startOffset="50%">
-                  20+ YEARS OF • CREATIVE EXCELLENCE •
+                  25+ YEARS OF • CREATIVE EXCELLENCE •
                 </textPath>
               </text>
             </svg>
 
-            <div className="badge-center">20+</div>
+            <div className="badge-center">25+</div>
           </div>
         </div>
 

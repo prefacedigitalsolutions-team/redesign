@@ -1,0 +1,104 @@
+.standard-banner-section {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #030303;
+  color: #ffffff;
+  padding: 140px 6% 80px 6%;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.standard-banner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Typography Styles */
+.standard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.standard-title {
+  font-size: 62px;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+  margin: 0;
+  color: #f4f4f5;
+}
+
+.italic-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a1a1aa;
+}
+
+.standard-desc {
+  font-size: 18px;
+  color: #9ca3af;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 520px;
+  font-weight: 300;
+}
+
+/* Right Visual Layout Styles */
+.standard-right {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  gap: 20px;
+}
+
+.minimal-card {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-two {
+  margin-top: 45px; /* Clean architectural offset */
+}
+
+.minimal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.minimal-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .standard-banner-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .standard-title {
+    font-size: 42px;
+  }
+  .standard-right {
+    height: 380px;
+  }
+  .card-two {
+    margin-top: 20px;
+  }
+}  
